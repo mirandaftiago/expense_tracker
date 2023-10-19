@@ -8,4 +8,4 @@ class ExpenseItem {
     required this.amount,
     required this.dateTime,
   });
-}
+} 

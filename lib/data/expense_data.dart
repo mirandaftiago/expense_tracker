@@ -99,4 +99,4 @@ class ExpenseData {
     }
     return dailyExpenseSummary;
   }
-}
+} 
