@@ -3,12 +3,13 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:new_expense_tracker/data/expense_data.dart';
 import 'package:provider/provider.dart';
 import 'pages/home_page.dart';
+
 void main() async {
   // initialize hive
   await Hive.initFlutter();
 
   // open a hive box
-  await Hive.openBox('expense_databse');
+  await Hive.openBox('expense_database');
 
   runApp(const MyApp());
 }
