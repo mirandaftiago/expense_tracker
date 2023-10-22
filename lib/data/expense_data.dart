@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_expense_tracker/models/expense_item.dart';
 import 'package:new_expense_tracker/datetime/date_time_helper.dart';
 
-class ExpenseData extends ChangeNotifier{
+class ExpenseData extends ChangeNotifier {
   // list of all expenses
   List<ExpenseItem> overallExpenseList = [];
 
@@ -39,14 +39,15 @@ class ExpenseData extends ChangeNotifier{
       case 6:
         return 'Sat';
       case 7:
+        return 'Sun';
       default:
         return '';
     }
   }
 
   // get the date for the start of the week
-  DateTime startOfTheWeekDate() {
-    DateTime? startOfTheWeek;
+  DateTime startOfWeekDate() {
+    DateTime? startOfWeek;
 
     // get todays date
     DateTime today = DateTime.now();
@@ -54,11 +55,12 @@ class ExpenseData extends ChangeNotifier{
     //go backwards from today to find Sunday
     for (int i = 0; i < 7; i++) {
       if (getDayName(today.subtract(Duration(days: i))) == 'Sun') {
-        startOfTheWeek = today.subtract(Duration(days: i));
+        startOfWeek = today.subtract(Duration(days: i));
+        break;
       }
     }
 
-    return startOfTheWeek!;
+    return startOfWeek!;
   }
 
   /*
@@ -102,4 +104,4 @@ class ExpenseData extends ChangeNotifier{
     }
     return dailyExpenseSummary;
   }
-} 
+}
