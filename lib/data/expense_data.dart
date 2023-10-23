@@ -4,7 +4,7 @@ import 'package:new_expense_tracker/models/expense_item.dart';
 import 'package:new_expense_tracker/datetime/date_time_helper.dart';
 
 class ExpenseData extends ChangeNotifier {
-  // list of all expenses
+ // list of all expenses
   List<ExpenseItem> overallExpenseList = [];
 
   // get expense list
@@ -30,9 +30,8 @@ class ExpenseData extends ChangeNotifier {
   }
 
   // delete expense
-  void deleteNewExpense(ExpenseItem expense) {
+  void deleteExpense(ExpenseItem expense) {
     overallExpenseList.remove(expense);
-
     notifyListeners();
     db.saveData(overallExpenseList);
   }
