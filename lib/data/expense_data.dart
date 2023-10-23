@@ -19,8 +19,10 @@ class ExpenseData extends ChangeNotifier {
   }
 
   // delete expense
-  void deleteNewExpense(ExpenseItem expense) {
+  void deleteExpense(ExpenseItem expense) {
     overallExpenseList.remove(expense);
+
+    notifyListeners();
   }
 
   // get weekday from a DateTime object
