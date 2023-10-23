@@ -3,6 +3,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:new_expense_tracker/data/expense_data.dart';
 import 'package:provider/provider.dart';
 import 'pages/home_page.dart';
+
 void main() async {
   // initialize hive
   await Hive.initFlutter();

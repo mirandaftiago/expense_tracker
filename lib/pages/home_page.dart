@@ -18,6 +18,14 @@ class _HomePageState extends State<HomePage> {
   final newExpenseDollarController = TextEditingController();
   final newExpenseCentsController = TextEditingController();
 
+  @override
+  void initState() {
+      super.initState();
+
+      // prepare data on startup
+      Provider.of<ExpenseData>(context, listen: false).prepareData();
+  }
+
   // add new Expense
   void addNewExpense() {
     showDialog(
